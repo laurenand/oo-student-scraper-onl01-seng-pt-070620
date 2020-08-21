@@ -35,6 +35,10 @@ class Scraper
         else 
           profile[:blog] = link
         end 
+    end 
+    profile[:profile_quote] = page.css("div.main-wrapper").css("div.vitals-text-container div.profile-quote").text
+    profile[:bio] = page.css("div.main-wrapper").css("div.description-holder p").text
+    profile 
   end
 
 end
